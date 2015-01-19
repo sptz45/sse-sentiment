@@ -19,7 +19,6 @@ scmInfo := Some(
   )
 )
 
-crossScalaVersions := Seq("2.10.0", "2.11.0")
 scalaVersion := "2.11.5"
 
 libraryDependencies ++= Seq(
@@ -65,7 +64,6 @@ pomExtra := (
 releaseSettings
 
 ReleaseKeys.publishArtifactsAction := PgpKeys.publishSigned.value
-ReleaseKeys.crossBuild := true
 
 ReleaseKeys.releaseProcess := Seq[ReleaseStep](
   checkSnapshotDependencies,
