@@ -12,6 +12,7 @@ project/plugins/project/
 
 # scala-ide
 .scala_dependencies
+bin
 
 # eclipse
 .project
