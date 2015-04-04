@@ -6,7 +6,7 @@ class WordList(words: Map[String, Int]) {
 
   def valenceOf(word: String): Int = wordsMap(word)
 
-  def + (word: Tuple2[String, Int]) = {
+  def + (word: (String, Int)) = {
     new WordList(words + word)
   }
 

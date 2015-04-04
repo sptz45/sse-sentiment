@@ -2,11 +2,11 @@ package com.tzavellas.sse.sentiment
 
 import scala.collection.mutable
 
-class SentimentAnalyzer(wordlist: WordList) {
+class SentimentAnalyzer(wordList: WordList) {
 
   private[this] val negators = Set("dont", "doesnt", "not", "non", "cant", "wont")
 
-  def sentimentOf(phrase: String) = {    
+  def sentimentOf(phrase: String) = {
     var score = 0
     val positive = new mutable.HashSet[String]
     val negative = new mutable.HashSet[String]
@@ -15,7 +15,7 @@ class SentimentAnalyzer(wordlist: WordList) {
 
     var isNegated = false
     for (word <- words) {
-      var valence = wordlist.valenceOf(word)
+      var valence = wordList.valenceOf(word)
 
       if (isNegated) {
         valence = -valence
@@ -37,5 +37,5 @@ class SentimentAnalyzer(wordlist: WordList) {
 
     Sentiment(score, words.length, positive.toSet, negative.toSet)
   }
-  
+
 }
